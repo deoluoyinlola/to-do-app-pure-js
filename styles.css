@@ -68,7 +68,7 @@ input#todo-input::placeholder {
   color: transparent;
 }
 
-label {
+div#input-container label {
   position: absolute;
   top: 0;
   z-index: -1;
@@ -92,6 +92,12 @@ input#todo-input:focus ~ label {
   font-size: 16px;
   font-weight: 600;
 }
+
+/*ul#todos-list {
+  color: rgb(75, 5, 5);
+  font-size: 16px;
+  font-weight: 600;
+}*/
 
 button#todo-add-btn {
   background-color: rgb(165, 22, 53);

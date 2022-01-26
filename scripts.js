@@ -1,6 +1,6 @@
 var list = document.getElementById("todos-list");
-var addBtn = document.getElementById("todos-add-btn");
-var addInput = document.getElementById("todos-input");
+var addBtn = document.getElementById("todo-add-btn");
+var addInput = document.getElementById("todo-input");
 
 function createTodo() {
 
@@ -32,7 +32,28 @@ function createTodo() {
     addInput.value = " ";
 }
 
+function removeTodo(removeElement) {
+    removeElement.parentElement.remove();
+}
 
+
+
+list.addEventListener("click", function (event) {
+    switch (event.target.tagName) {
+        case "P":
+            showEditInput();
+            break;
+        case "SPAN":
+            removeTodo(event.target);
+            break;
+    }
+});
+
+list.addEventListener("change", function (event) {
+    if (event.target.tagName === "INPUT" && event.target.type === "checkbox") {
+        toggleComplete();
+    }
+});
 
 addBtn.addEventListener("click", createTodo);
 addInput.addEventListener("keypress", function (event) {
